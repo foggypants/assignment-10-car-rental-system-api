@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: car-rental-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SUPABASE_URL
+        sync: false          # you enter this in the Render dashboard
+      - key: SUPABASE_ANON_KEY
+        sync: false          # you enter this in the Render dashboard
+      - key: ADMIN_EMAILS
+        sync: false          # optional
+      - key: CORS_ORIGIN
+        sync: false          # optional
